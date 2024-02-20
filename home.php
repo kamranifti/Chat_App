@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<?php 
+<?php
 session_start();
 include "./include/connection.php";
 
-if(!isset($_SESSION['user_email'])){
+if (!isset($_SESSION['user_email'])) {
     header("location:signin.php");
 }
 
@@ -26,17 +26,24 @@ if(!isset($_SESSION['user_email'])){
             <div class="col-md-3 col-sm-3 col-xs-12 left-sidebar">
                 <div class="input-group-searchbox">
                     <div class="input-group-btn">
-                        <center> <a href="./include/find-friends.php"><button class="btn btn-default search-icon" name="search_user" type="submit">Add new user</button> </a></center>
+                        <center> <a href="./include/find-friends.php"><button class="btn btn-default search-icon mt-3" name="search_user" type="submit">Add new user</button> </a></center>
                     </div>
                 </div>
-                <div class="left-chat">
+                <div class="left-chat mt-3">
                     <ul>
                         <?php include "./include/get_users_data.php"; ?>
                     </ul>
                 </div>
             </div>
-            <div class="col-md-9 col-sm-9 col-xs-12 right-sidebar">
-                <div class="row">
+            <div class="col-md-9 col-sm-9 right-sidebar">
+                <div class="logout-box">
+                    <form action="logout.php" method="post">
+                        <button name="logout" class="btn btn-danger logout-btn">Logout</button>
+                    </form>
+                </div>
+                <?php if(isset($_GET['user_name'])){ ?>
+
+                    <div class="row">
                     <!-- logdin user information -->
                     <?php
                     $user = $_SESSION['user_email'];
@@ -65,16 +72,8 @@ if(!isset($_SESSION['user_email'])){
                             <img src="<?php echo "$user_profile_image"; ?>" alt="">
                         </div>
                         <div class="right-headers-detail">
-                            <form action="logout.php" method="post">
-                                <p><?php echo "$username"; ?></p>
-                                <span> <?php echo $total; ?> Messages</span> &nbsp; &nbsp;
-                                <button name="logout" class="btn btn-danger">Logout</button>
-                            </form>
-                            <?php
-                            if (isset($_POST['logout'])) {
-                                $update_msg = mysqli_query($con, "UPDATE users SET log_in = 'Offline' WHERE user_name = '$user_name'");
-                            }
-                            ?>
+                            <p class="name"><?php echo "$username"; ?></p>
+                            <span class="messages"> <?php echo $total; ?> Messages</span> &nbsp; &nbsp;
                         </div>
                     </div>
                 </div>
@@ -83,10 +82,10 @@ if(!isset($_SESSION['user_email'])){
                         <?php
 
                         $update_msg = mysqli_query($con, "UPDATE users_chat SET msg_status='read' WHERE sender_username='$username' AND receiver_username= '$user_name'");
-                       
-                        $sel_msg = "SELECT * FROM users_chat WHERE (sender_username = '$user_name' AND receiver_username = '$username') OR (receiver_username = '$user_name' AND sender_username = '$username')";                        
+
+                        $sel_msg = "SELECT * FROM users_chat WHERE (sender_username = '$user_name' AND receiver_username = '$username') OR (receiver_username = '$user_name' AND sender_username = '$username')";
                         $run_msg = mysqli_query($con, $sel_msg);
-                            
+
                         while ($row = mysqli_fetch_array($run_msg)) {
                             $sender_username = $row['sender_username'];
                             $receiver_username = $row['receiver_username'];
@@ -129,6 +128,10 @@ if(!isset($_SESSION['user_email'])){
                         </form>
                     </div>
                 </div>
+
+              <?php   } else { ?>
+                  <h1>Please select user </h1>
+              <?php } ?>
             </div>
         </div>
     </div>
@@ -149,6 +152,8 @@ if(!isset($_SESSION['user_email'])){
             $insert = "INSERT INTO users_chat(sender_username, receiver_username, msg_content, msg_status, msg_date)
             VALUES ('$user_name','$username','$msg','unread',NOW())";
             $run_insert = mysqli_query($con, $insert);
+
+            
         }
     }
     ?>

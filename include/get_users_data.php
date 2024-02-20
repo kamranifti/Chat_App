@@ -13,21 +13,19 @@ while ($row_user = mysqli_fetch_array($run_user)) {
     $login = $row_user['log_in'];
 
     echo "
-        <li>
+        <li class='left-user'>
         <div class='chat-left-img'>
         <img width='50px' height='50px' src='$user_profile'>
         </div>
         <div class='chat-left-details'>
-        <p> <a href='home.php?user_name=$user_name'>$user_name</a></p>";
+        <p class='user-name'><a href='home.php?user_name=$user_name'>$user_name</a></p>";
 
     if ($login = "Online") {
-        echo "<span><i class='fa fa-circle green-circle 'aira-hidden='true'></i>Online</span>
-        ";
+        echo "<span class='online-text'> <i class='fa fa-circle green-circle ' aira-hidden='true'></i> Online</span>";
     } 
-    else if ($login = "Offline") {
-        echo "<span><i class='fa fa-circle grey-circle 'aira-hidden='true'></i>Offline</span>";
-    }"
-        </div>
-        </li>
-        ";
+    else{
+        echo "<span class='online-text'><i class='fa fa-circle grey-circle ' aira-hidden='true'></i> Offline</span>";
+    }
+    "</div>
+        </li>";
 }

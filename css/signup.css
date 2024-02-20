@@ -33,7 +33,7 @@ input {
 }
 
 .form-header {
-    background-color: rgba(216, 68, 242, 0.324);
+    background: radial-gradient(circle, rgba(178,174,238,1) 0%, rgba(233,148,191,0.8379726890756303) 100%);
     padding: 10px;
     border-radius: 4px;
     font-family: 'Pacifico' sans-serif !important;
@@ -43,7 +43,7 @@ input {
 
 }
 .sub-btn {
-    background-color: rgba(216, 68, 242, 0.324);
+    background: radial-gradient(circle, rgba(178,174,238,1) 0%, rgba(233,148,191,0.8379726890756303) 100%);
     width: 350px;
     height: 50px;
     border-radius: 20px;
