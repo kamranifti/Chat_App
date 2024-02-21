@@ -16,7 +16,7 @@ if (isset($_POST['sign_in'])) {
         $_SESSION['user_email'] = $email;
 
         $update_msg = mysqli_query($con, "UPDATE users SET log_in = 'Online' WHERE user_email = '$email'");
-        
+
         $user = $_SESSION['user_email'];
         $get_user = "SELECT * FROM users WHERE user_email='$user'";
         $run_user = mysqli_query($con, $get_user);
@@ -25,8 +25,6 @@ if (isset($_POST['sign_in'])) {
         $user_name = $row['user_name'];
 
         header("location:home.php?user_name=$user_name");
-
-
     } else {
         echo "
             <div class='alert alert-danger mt-3'>

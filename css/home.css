@@ -1,24 +1,24 @@
 .main-section {
-    border: 1px solid #000;
     width: 100%;
 }
 
 .left-sidebar {
-    background: radial-gradient(circle, rgba(178,174,238,1) 0%, rgba(233,148,191,0.8379726890756303) 100%);
+    background: radial-gradient(circle, rgba(178, 174, 238, 1) 0%, rgba(233, 148, 191, 0.8379726890756303) 100%);
     padding: 0px;
 }
 
 .searchbox {
     width: 100%;
     padding: 27px 10px;
-    border-bottom: 2px solid #3f3f3f;
 }
-.search-icon{
+
+.search-icon {
     background-color: #23849688 !important;
     color: #000;
     font-weight: 500;
     border-radius: 0px;
 }
+
 .search-icon:hover {
     color: white;
 }
@@ -40,7 +40,8 @@
 }
 
 .left-chat {
-    overflow: scroll;
+    overflow-y: scroll;
+    height: 100vh;
 }
 
 .left-chat ul {
@@ -92,13 +93,10 @@
 }
 
 .right-sidebar {
-    border-left: 1px solid #3d3d3d;
     padding: 0px;
+    border-right: 7px solid rgba(233, 148, 191, 0.8379726890756303);
 }
 
-.right-header {
-    border-bottom: 1px solid #5c5c5c;
-}
 
 .right-header-img img {
     width: 50px;
@@ -111,7 +109,7 @@
 
 .right-header {
     height: 80px;
-    background: radial-gradient(circle, rgba(178,174,238,1) 0%, rgba(233,148,191,0.8379726890756303) 100%);
+    background: radial-gradient(circle, rgba(178, 174, 238, 1) 0%, rgba(233, 148, 191, 0.8379726890756303) 100%);
     /* background-color: rgba(233,148,191,0.8379726890756303); */
     width: 97.3%;
     margin-left: 12px;
@@ -145,7 +143,6 @@
 
 .right-header-contentChat {
     overflow-y: scroll;
-    background-color: #ffffff;
     position: relative;
 }
 
@@ -156,10 +153,11 @@
 
 .right-header-contentChat .rightside-left-chat p,
 .right-header-contentChat .rightside-right-chat p {
-    background-color: #86bb71;
+    background-color: #b571bb8c;
     padding: 15px;
     border-radius: 8px;
-    color: #fff;
+    color: #0e0d0d;
+    font-weight: 600;
 }
 
 .right-header-contentChat .rightside-right-chat p {
@@ -197,42 +195,44 @@
 
 .rightside-right-chat span small,
 .rightside-left-chat span small {
-    color: #bdbdc2;
+    color: #a0a0a0;
 }
 
 .rightside-left-chat :before {
     content: " ";
     position: absolute;
-    top: 14px;
+    top: 19px;
     left: 15px;
     bottom: 150px;
     border: 15px solid transparent;
-    border-bottom-color: #86bb71;
+    border-bottom-color: #ca91cf71;
     z-index: 1;
 }
 
 .rightside-right-chat :before {
     content: "";
     position: absolute;
-    top: 14px;
+    top: 19px;
     right: 15px;
     bottom: 150px;
     border: 15px solid transparent;
-    border-bottom-color: #86bb71;
+    border-bottom-color: #94c2ed;
 }
 
-.green-circle{
+.green-circle {
     color: rgba(21, 121, 71, 0.815) !important;
     font-size: 10px;
     position: relative;
     top: -1px;
 }
-.grey-circle{
+
+.grey-circle {
     font-size: 10px;
     position: relative;
     top: -2px;
     color: grey;
 }
+
 .logout-btn {
     position: relative;
     left: 86%;
@@ -244,34 +244,39 @@
     font-weight: 500;
     border: none !important;
     border-radius: 0px;
-    
+
 }
-.logout-box{
-    background: radial-gradient(circle, rgba(178,174,238,1) 0%, rgba(233,148,191,0.8379726890756303) 100%);
+
+.logout-box {
+    background: radial-gradient(circle, rgba(178, 174, 238, 1) 0%, rgba(233, 148, 191, 0.8379726890756303) 100%);
     /* background-color: rgba(233,148,191,0.8379726890756303); */
 }
 
-a{
+a {
     text-decoration: none;
     color: black;
     font-weight: 500;
     margin-left: 10px;
     font-size: 17px;
 }
-.online-text{
+
+.online-text {
     font-size: 13px;
     color: rgb(54, 54, 54);
 }
-.name{
+
+.name {
     margin-left: 5px !important;
     font-size: 17px;
 }
-.messages{
+
+.messages {
     font-size: 12px;
     position: relative;
     top: -14px;
 }
-.left-user{
+
+.left-user {
     background-color: #3d86ca54;
     padding-top: 13px;
     padding-left: 10px;
@@ -279,8 +284,41 @@ a{
     border-bottom-left-radius: 29px;
 }
 
+.input-msg {
+    border: 2px solid rgba(221, 39, 245, 0.5) !important;
+    margin-left: 14px;
+    outline: none;
+    border-radius: 0px !important;
+}
+
+.send-btn {
+    background-color: rgba(221, 39, 245, 0.5) !important;
+    width: 120px !important;
+    position: relative;
+    top: -3px;
+    right: 25px;
+    border-radius: 0px !important;
+}
 
 
+/* scroollbar  css*/
+
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: radial-gradient(circle, rgba(146, 21, 177, 0.342) 0%, rgba(29, 129, 211, 0.267) 100%);
+    border-radius: 4px;
+}
+
+/* scroollbar  css  end*/
 
 
 

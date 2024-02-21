@@ -20,12 +20,30 @@ while ($row_user = mysqli_fetch_array($run_user)) {
         <div class='chat-left-details'>
         <p class='user-name'><a href='home.php?user_name=$user_name'>$user_name</a></p>";
 
-    if ($login = "Online") {
-        echo "<span class='online-text'> <i class='fa fa-circle green-circle ' aira-hidden='true'></i> Online</span>";
-    } 
+    if ($login == 'Online') {
+        echo "<span class='online-text'><i class='fa fa-circle green-circle'></i> $login</span>";
+    }
     else{
-        echo "<span class='online-text'><i class='fa fa-circle grey-circle ' aira-hidden='true'></i> Offline</span>";
+        echo "<span class='online-text'> <i class='fa fa-circle grey-circle'></i> $login</span>";
     }
     "</div>
         </li>";
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// <span class='online-text'><i class='fa fa-circle grey-circle ' aira-hidden='true'></i> Offline</span>
+
+// <span class='online-text'> <i class='fa fa-circle green-circle ' aira-hidden='true'></i> Online</span>
