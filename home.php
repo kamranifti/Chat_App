@@ -163,8 +163,7 @@ if (!isset($_SESSION['user_email'])) {
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var scrollingToBottom = document.getElementById("scrolling-to-bottom");
-            scrollingToBottom.scrollTop = scrollingToBottom.scrollHeight;
-        });
+            scrollingToBottom.scrollTop = scrollingToBottom.scrollHeight;});
     </script>
 
     <script>
@@ -176,7 +175,7 @@ if (!isset($_SESSION['user_email'])) {
             leftChat.style.height = (height - 92) + 'px';
 
             var rightHeaderContentChat = document.querySelector('.right-header-contentChat');
-            rightHeaderContentChat.style.height = (height - 163) + 'px';
+            rightHeaderContentChat.style.height = (height - 159) + 'px';
         });
     </script>
 </body>

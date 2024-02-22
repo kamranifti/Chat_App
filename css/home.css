@@ -1,9 +1,13 @@
+body{
+    background-color: #dceb0c2f; 
+}
+
 .main-section {
     width: 100%;
 }
 
 .left-sidebar {
-    background: radial-gradient(circle, rgba(178, 174, 238, 1) 0%, rgba(233, 148, 191, 0.8379726890756303) 100%);
+    background: radial-gradient(circle, rgb(230, 174, 238) 0%, rgba(233, 148, 191, 0.8379726890756303) 100%);
     padding: 0px;
 }
 
@@ -42,6 +46,7 @@
 .left-chat {
     overflow-y: scroll;
     height: 100vh;
+    margin-top: 35px !important;
 }
 
 .left-chat ul {
@@ -103,7 +108,7 @@
     height: 50px;
     border-radius: 50%;
     float: left;
-    border: 3px solid #61BC71;
+    border: 3px solid #1c5772;
     margin-right: 10px;
 }
 
@@ -199,13 +204,13 @@
 }
 
 .rightside-left-chat :before {
-    content: " ";
+    content: "";
     position: absolute;
     top: 19px;
     left: 15px;
     bottom: 150px;
     border: 15px solid transparent;
-    border-bottom-color: #ca91cf71;
+    border-bottom-color: #ba84be49;
     z-index: 1;
 }
 
@@ -282,6 +287,7 @@ a {
     padding-left: 10px;
     border-top-left-radius: 29px;
     border-bottom-left-radius: 29px;
+    margin-top: 25px !important;
 }
 
 .input-msg {
@@ -289,6 +295,7 @@ a {
     margin-left: 14px;
     outline: none;
     border-radius: 0px !important;
+    background-color: #ffffff93;
 }
 
 .send-btn {
