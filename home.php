@@ -93,13 +93,12 @@ if (!isset($_SESSION['user_email'])) {
                                 $msg_date = $row['msg_date'];
 
                             ?>
-                                <ul>
+                                <ul class='chats'>
                                     <?php
                                     if ($user_name == $sender_username and $username == $receiver_username) {
                                         echo "
                                 <li>
                                 <div class='rightside-right-chat'>
-                                
                                 <span>$user_name<small> $msg_date</small></span>
                                 <br><br>
                                 <p>$msg_content</p>
@@ -163,7 +162,8 @@ if (!isset($_SESSION['user_email'])) {
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var scrollingToBottom = document.getElementById("scrolling-to-bottom");
-            scrollingToBottom.scrollTop = scrollingToBottom.scrollHeight;});
+            scrollingToBottom.scrollTop = scrollingToBottom.scrollHeight;
+        });
     </script>
 
     <script>
@@ -178,6 +178,7 @@ if (!isset($_SESSION['user_email'])) {
             rightHeaderContentChat.style.height = (height - 159) + 'px';
         });
     </script>
+
 </body>
 
 </html>

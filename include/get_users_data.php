@@ -22,8 +22,7 @@ while ($row_user = mysqli_fetch_array($run_user)) {
 
     if ($login == 'Online') {
         echo "<span class='online-text'><i class='fa fa-circle green-circle'></i> $login</span>";
-    }
-    else{
+    } else {
         echo "<span class='online-text'> <i class='fa fa-circle grey-circle'></i> $login</span>";
     }
     "</div>
